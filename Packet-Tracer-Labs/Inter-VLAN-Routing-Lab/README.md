@@ -5,7 +5,7 @@ Configure Inter-VLAN routing using router subinterfaces
 so that PCs in different VLANs can communicate with each other
 
 ## Topology
-<img width="794" height="232" alt="Topology fig " src="https://github.com/user-attachments/assets/48770a5d-a618-4fc2-a72c-6e10bb82404c" />
+<img width="794" height="232" alt="Topology fig " src="https://github.com/user-attachments/assets/95824070-f1b0-411f-86ee-cd9efd652977" />
 
 <img width="808" height="423" alt="Topology " src="https://github.com/user-attachments/assets/a53c3eef-a8f0-4545-ae87-23814792659a" />
 
@@ -17,10 +17,10 @@ so that PCs in different VLANs can communicate with each other
 ## IP Address Table
 | Device    | VLAN | IP Address     | Subnet Mask   | Gateway        |
 |-----------|------|----------------|---------------|----------------|
-| PC1       | 10   | 192.168.1.1    | 255.255.255.0 | 192.168.1.100  |
-| PC2       | 10   | 192.168.1.2    | 255.255.255.0 | 192.168.1.100  |
-| PC3       | 20   | 192.168.2.1    | 255.255.255.0 | 192.168.2.100  |
-| PC4       | 20   | 192.168.2.2    | 255.255.255.0 | 192.168.2.100  |
+| PC0       | 10   | 192.168.1.1    | 255.255.255.0 | 192.168.1.100  |
+| PC1       | 10   | 192.168.1.2    | 255.255.255.0 | 192.168.1.100  |
+| PC2       | 20   | 192.168.2.1    | 255.255.255.0 | 192.168.2.100  |
+| PC3       | 20   | 192.168.2.2    | 255.255.255.0 | 192.168.2.100  |
 | G0/0.10   | 10   | 192.168.1.100  | 255.255.255.0 | —              |
 | G0/0.20   | 20   | 192.168.2.100  | 255.255.255.0 | —              |
 
@@ -37,7 +37,7 @@ Switch(config-vlan)# name VLAN20
 
 ### Switch — Access Ports
 
-PC1
+PC0
 
 Switch(config)# interface fastethernet 0/1
 
@@ -45,7 +45,7 @@ Switch(config-if)# switchport mode access
 
 Switch(config-if)# switchport access vlan 10
 
-PC2
+PC1
 
 Switch(config)# interface fastethernet 0/2
 
@@ -53,7 +53,7 @@ Switch(config-if)# switchport mode access
 
 Switch(config-if)# switchport access vlan 10
 
-PC3
+PC2
 
 Switch(config)# interface fastethernet 0/3
 
@@ -61,7 +61,7 @@ Switch(config-if)# switchport mode access
 
 Switch(config-if)# switchport access vlan 20
 
-PC4
+PC3
 
 Switch(config)# interface fastethernet 0/4
 
@@ -125,11 +125,11 @@ show interfaces trunk
 ### Test Order Used
 | Test | From | To | Result |
 |------|------|----|--------|
-| 1 | PC1 | 192.168.1.100 (gateway) | ✅ |
-| 2 | PC3 | 192.168.2.100 (gateway) | ✅ |
-| 3 | PC1 | PC3 (cross VLAN) | ✅ |
-| 4 | PC1 | PC4 (cross VLAN) | ✅ |
-| 5 | PC2 | PC3 (cross VLAN) | ✅ |
+| 1 | PC0 | 192.168.1.100 (gateway) | ✅ |
+| 2 | PC2 | 192.168.2.100 (gateway) | ✅ |
+| 3 | PC0 | PC3 (cross VLAN) | ✅ |
+| 4 | PC0 | PC4 (cross VLAN) | ✅ |
+| 5 | PC1 | PC3 (cross VLAN) | ✅ |
 
 ---
 
