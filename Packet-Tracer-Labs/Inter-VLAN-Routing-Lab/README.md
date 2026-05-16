@@ -33,55 +33,91 @@ PC4 (VLAN 20) ──┘                       └── G0/0.20 (192.168.2.100)
 ## Configuration Commands
 
 ### Switch — VLAN Configuration
+
 Switch(config)# vlan 10
 Switch(config-vlan)# name VLAN10
 Switch(config)# vlan 20
 Switch(config-vlan)# name VLAN20
 
 ### Switch — Access Ports
-! PC1
+
+PC1
+
 Switch(config)# interface fastethernet 0/1
+
 Switch(config-if)# switchport mode access
+
 Switch(config-if)# switchport access vlan 10
-! PC2
+
+PC2
+
 Switch(config)# interface fastethernet 0/2
+
 Switch(config-if)# switchport mode access
+
 Switch(config-if)# switchport access vlan 10
-! PC3
+
+PC3
+
 Switch(config)# interface fastethernet 0/3
+
 Switch(config-if)# switchport mode access
+
 Switch(config-if)# switchport access vlan 20
-! PC4
+
+PC4
+
 Switch(config)# interface fastethernet 0/4
+
 Switch(config-if)# switchport mode access
+
 Switch(config-if)# switchport access vlan 20
+
 
 ### Switch — Trunk Port to Router
 Switch(config)# interface fastethernet 0/20
+
 Switch(config-if)# switchport mode trunk
+
 Switch(config-if)# switchport trunk allowed vlan 10,20
 
 ### Router — Subinterface Configuration
+
 ! Enable main interface first
+
 Router(config)# interface gigabitethernet 0/0
+
 Router(config-if)# no shutdown
+
 ! Subinterface for VLAN 10
+
 Router(config)# interface gigabitethernet 0/0.10
+
 Router(config-subif)# encapsulation dot1q 10
+
 Router(config-subif)# ip address 192.168.1.100 255.255.255.0
+
 ! Subinterface for VLAN 20
+
 Router(config)# interface gigabitethernet 0/0.20
+
 Router(config-subif)# encapsulation dot1q 20
+
 Router(config-subif)# ip address 192.168.2.100 255.255.255.0
 
 ---
 
 ## Verification Commands
 ! Router
+
 show ip interface brief
+
 show running-config
+
 ! Switch
+
 show vlan brief
+
 show interfaces trunk
 
 ---
