@@ -60,3 +60,4 @@ My journey in computer science has led me to develop a passion for cybersecurity
 |-----|-------------|--------|
 | <a href="https://github.com/nazeeb-creator/nazeeb/tree/main/Packet-Tracer-Labs/VLAN-Trunk-Lab">VLAN Basic Config</a> | Create and assign VLANs on a switch | ✅ Done |
 | <a href="https://github.com/nazeeb-creator/nazeeb/tree/main/Packet-Tracer-Labs/VLAN-Trunk-Lab">VLAN Trunk Lab</a> | VLAN trunk between two switches with troubleshooting | ✅ Done |
+<a href="https://google.com">Inter VLAN Routing</a> | Router on a stick — subinterfaces for VLAN 10 and 20 | ✅ Done |
