@@ -31,8 +31,11 @@ so that PCs in different VLANs can communicate with each other
 ### Switch — VLAN Configuration
 
 Switch(config)# vlan 10
+
 Switch(config-vlan)# name VLAN10
+
 Switch(config)# vlan 20
+
 Switch(config-vlan)# name VLAN20
 
 ### Switch — Access Ports
