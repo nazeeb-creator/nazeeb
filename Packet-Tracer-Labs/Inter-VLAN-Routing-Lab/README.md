@@ -7,10 +7,11 @@ so that PCs in different VLANs can communicate with each other
 ## Topology
 <img width="782" height="225" alt="Topology fig " src="https://github.com/user-attachments/assets/a491d274-dbd4-41db-a8d9-b082961f6bcb" />
 
+## Packet tracer topology
 <img width="808" height="423" alt="Topology " src="https://github.com/user-attachments/assets/a53c3eef-a8f0-4545-ae87-23814792659a" />
 
 ## Devices Used
-- 1 Cisco Router (1941 or 2911)
+- 1 Cisco Router 
 - 1 Cisco Switch (2960)
 - 4 PCs
 
@@ -152,5 +153,7 @@ show interfaces trunk
 
 ## Key Rule to Remember
 Same VLAN = Switch handles it 
+
 Different VLAN = Router needed 
+
 Router on a Stick = One physical link with subinterfaces 
