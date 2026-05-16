@@ -7,12 +7,6 @@ so that PCs in different VLANs can communicate with each other
 ## Topology
 <img width="808" height="423" alt="Topology " src="https://github.com/user-attachments/assets/a53c3eef-a8f0-4545-ae87-23814792659a" />
 
-PC1 (VLAN 10) ──┐
-PC2 (VLAN 10) ──┤
-Switch (F0/20 Trunk) ── Router G0/0
-PC3 (VLAN 20) ──┤                       ├── G0/0.10 (192.168.1.100)
-PC4 (VLAN 20) ──┘                       └── G0/0.20 (192.168.2.100)
-
 ## Devices Used
 - 1 Cisco Router (1941 or 2911)
 - 1 Cisco Switch (2960)
