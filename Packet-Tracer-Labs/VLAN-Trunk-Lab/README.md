@@ -8,7 +8,7 @@ and verify connectivity between PCs in same VLAN
 <img width="987" height="411" alt="Trunk" src="https://github.com/user-attachments/assets/52b4245c-7d1e-48c4-b716-e589c93c83a7" />
 
 
-Switch1 ----Trunk Link---- Switch2
+Switch0 ----Trunk Link---- Switch1
 PC1 - VLAN 10             PC3 - VLAN 10
 PC2 - VLAN 20             PC4 - VLAN 20
 
@@ -26,13 +26,13 @@ PC2 - VLAN 20             PC4 - VLAN 20
 
 ## Configuration Commands
 
-### Switch 1 — VLAN Configuration
+### Switch 0 — VLAN Configuration
 Switch1(config)# vlan 10
 Switch1(config-vlan)# name VLAN10
 Switch1(config)# vlan 20
 Switch1(config-vlan)# name VLAN20
 
-### Switch 1 — Access Ports
+### Switch 0 — Access Ports
 Switch1(config)# interface fastethernet 0/1
 Switch1(config-if)# switchport mode access
 Switch1(config-if)# switchport access vlan 10
@@ -41,13 +41,10 @@ Switch1(config)# interface fastethernet 0/2
 Switch1(config-if)# switchport mode access
 Switch1(config-if)# switchport access vlan 20
 
-### Switch 1 — Trunk Port
+### Switch 0 — Trunk Port
 Switch1(config)# interface fastethernet 0/24
 Switch1(config-if)# switchport mode trunk
 Switch1(config-if)# switchport trunk allowed vlan 10,20
-
-### Switch 2 — Same Configuration
-[Repeat same commands on Switch 2]
 
 ## Verification Commands
 show vlan brief
