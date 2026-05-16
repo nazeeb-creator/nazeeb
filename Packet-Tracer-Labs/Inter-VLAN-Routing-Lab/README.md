@@ -5,7 +5,7 @@ Configure Inter-VLAN routing using router subinterfaces
 so that PCs in different VLANs can communicate with each other
 
 ## Topology
-<img width="794" height="232" alt="Topology fig " src="https://github.com/user-attachments/assets/95824070-f1b0-411f-86ee-cd9efd652977" />
+<img width="782" height="225" alt="Topology fig " src="https://github.com/user-attachments/assets/a491d274-dbd4-41db-a8d9-b082961f6bcb" />
 
 <img width="808" height="423" alt="Topology " src="https://github.com/user-attachments/assets/a53c3eef-a8f0-4545-ae87-23814792659a" />
 
